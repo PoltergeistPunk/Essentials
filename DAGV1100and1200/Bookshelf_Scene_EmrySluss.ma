@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Bookshelf_Scene_EmrySluss.ma
-//Last modified: Thu, Sep 03, 2026 08:07:47 PM
+//Last modified: Thu, Sep 03, 2026 08:09:45 PM
 //Codeset: UTF-8
 requires maya "2027";
 requires -nodeType "polyBoolean" "polyBoolean" "1.1";
@@ -12,20 +12,20 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202606171832-bee0ff2c7e";
 fileInfo "osv" "Mac OS X 15.7.4";
-fileInfo "UUID" "624822D4-0C41-8DC8-6A95-498BD8A46F3B";
+fileInfo "UUID" "BC27A33C-904D-2EFB-5702-AAAC31F8531E";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "52E68A28-4988-B75B-BFA1-57B176075F40";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.367313937649428 16.900314480970728 34.715357237217844 ;
-	setAttr ".r" -type "double3" -11.264389682754794 19.400000000000105 -4.2150104414161156e-16 ;
+	setAttr ".t" -type "double3" 0.75184780445401311 11.370456913180524 8.1510877593196778 ;
+	setAttr ".r" -type "double3" -11.864389682754799 17.800000000000104 0 ;
 	setAttr ".rp" -type "double3" -3.1086244689504383e-15 -1.7763568394002505e-15 -1.4210854715202004e-14 ;
 	setAttr ".rpt" -type "double3" -5.8189328195139879e-15 -2.6933711626747887e-15 3.9904854835114233e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0F4E5CC5-4918-4D67-39B5-37A220EBF906";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 37.78134722690708;
+	setAttr ".coi" 8.9993185208340716;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -8223,11 +8223,11 @@ createNode mesh -n "window_paneShape" -p "window_pane";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface2";
+createNode transform -n "Window_wall";
 	rename -uid "DE1588D9-8E44-C61C-75ED-E798C6E81931";
 	setAttr ".rp" -type "double3" -11.99996911845745 0 0.027224181669630809 ;
 	setAttr ".sp" -type "double3" -11.99996911845745 0 0.027224181669630809 ;
-createNode mesh -n "polySurfaceShape5" -p "polySurface2";
+createNode mesh -n "Window_wallShape" -p "Window_wall";
 	rename -uid "F578409F-894F-1F05-B071-CB9636E43CF2";
 	setAttr -k off ".v";
 	setAttr -s 4 ".iog[0].og";
@@ -8858,6 +8858,7 @@ createNode mesh -n "lampShape" -p "lamp";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".dn" yes;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "EA820CA0-8749-5A29-688E-C9ACBB3B6A69";
 	setAttr -s 2 ".lnk";
@@ -12670,10 +12671,8 @@ connectAttr "groupParts16.og" "books_1Shape.i";
 connectAttr "groupId47.id" "books_1Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "books_1Shape.iog.og[0].gco";
 connectAttr "groupId48.id" "books_1Shape.ciog.cog[0].cgid";
-connectAttr "groupId68.id" "|books_1|polySurface5|polySurfaceShape5.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "|books_1|polySurface5|polySurfaceShape5.iog.og[0].gco"
-		;
+connectAttr "groupId68.id" "polySurfaceShape5.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape5.iog.og[0].gco";
 connectAttr "groupId69.id" "|books_1|polySurface6|polySurfaceShape6.iog.og[0].gid"
 		;
 connectAttr ":initialShadingGroup.mwc" "|books_1|polySurface6|polySurfaceShape6.iog.og[0].gco"
@@ -12720,10 +12719,10 @@ connectAttr "groupId63.id" "window_holeShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "window_holeShape.iog.og[0].gco";
 connectAttr "groupParts18.og" "window_holeShape.i";
 connectAttr "groupId64.id" "window_holeShape.ciog.cog[0].cgid";
-connectAttr "polyBoolean1.out" "|polySurface2|polySurfaceShape5.i";
-connectAttr "groupId61.id" "|polySurface2|polySurfaceShape5.iog.og[0].gid";
-connectAttr "groupId63.id" "|polySurface2|polySurfaceShape5.iog.og[1].gid";
-connectAttr "groupId65.id" "|polySurface2|polySurfaceShape5.ciog.cog[0].cgid";
+connectAttr "polyBoolean1.out" "Window_wallShape.i";
+connectAttr "groupId61.id" "Window_wallShape.iog.og[0].gid";
+connectAttr "groupId63.id" "Window_wallShape.iog.og[1].gid";
+connectAttr "groupId65.id" "Window_wallShape.ciog.cog[0].cgid";
 connectAttr "groupId90.id" "lamp_baseShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "lamp_baseShape.iog.og[0].gco";
 connectAttr "groupParts24.og" "lamp_baseShape.i";
@@ -13058,19 +13057,15 @@ connectAttr "wall_Shape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "wall_Shape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "window_holeShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "window_holeShape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "|polySurface2|polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|polySurface2|polySurfaceShape5.iog.og[1]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|polySurface2|polySurfaceShape5.ciog.cog[0]" ":initialShadingGroup.dsm"
-		 -na;
+connectAttr "Window_wallShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "Window_wallShape.iog.og[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "Window_wallShape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "window_pane1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "|books_1|polySurface3|polySurfaceShape6.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "|books_1|polySurface4|polySurfaceShape7.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|books_1|polySurface5|polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
+connectAttr "polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "|books_1|polySurface6|polySurfaceShape6.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "|books_1|polySurface7|polySurfaceShape7.iog.og[0]" ":initialShadingGroup.dsm"
