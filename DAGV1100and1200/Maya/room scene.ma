@@ -1,7 +1,15 @@
 //Maya ASCII 2027 scene
 //Name: room scene.ma
-//Last modified: Thu, Oct 01, 2026 07:55:40 PM
+//Last modified: Thu, Oct 01, 2026 11:16:22 PM
 //Codeset: UTF-8
+file -rdi 1 -ns "Potted_plant_1" -rfn "Potted_plant_1RN" -op "v=0;" -typ "mayaAscii"
+		 "/Users/plutosluss/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Potted plant 1.ma";
+file -rdi 1 -ns "potted_plant_2" -rfn "potted_plant_2RN" -op "v=0;" -typ "mayaAscii"
+		 "/Users/plutosluss/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/potted plant 2.ma";
+file -r -ns "Potted_plant_1" -dr 1 -rfn "Potted_plant_1RN" -op "v=0;" -typ "mayaAscii"
+		 "/Users/plutosluss/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Potted plant 1.ma";
+file -r -ns "potted_plant_2" -dr 1 -rfn "potted_plant_2RN" -op "v=0;" -typ "mayaAscii"
+		 "/Users/plutosluss/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/potted plant 2.ma";
 requires maya "2027";
 requires "mtoa" "5.6.2";
 requires -nodeType "UsdDefaultSettings" -dataType "pxrUsdStageData" "mayaUsdPlugin" "0.37.0";
@@ -11,22 +19,22 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202606171832-bee0ff2c7e";
 fileInfo "osv" "Mac OS X 15.7.4";
-fileInfo "UUID" "3D285B31-DF41-5A67-E477-F890F8056D00";
+fileInfo "UUID" "664E0373-6F47-9F06-3F03-38B357A90B23";
 createNode transform -s -n "persp";
 	rename -uid "1C2D471D-CF47-5A01-C0D1-BCB983B14AFF";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 39.493020796815294 24.29473276208282 13.041384302487472 ;
-	setAttr ".r" -type "double3" -29.400000000000844 58.80000000000171 3.0698734080608025e-15 ;
-	setAttr ".rpt" -type "double3" 9.5492280085188548e-15 -7.342265565159178e-15 -7.4792447885254284e-15 ;
+	setAttr ".t" -type "double3" 14.369549211171636 21.981139443367198 36.047242055592974 ;
+	setAttr ".r" -type "double3" -28.800000000000505 29.400000000000087 0 ;
+	setAttr ".rpt" -type "double3" 9.6096146570317873e-15 -7.3621566758406562e-15 -7.2353357852311494e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C34D8C86-A84E-2137-F9F1-6DAE03CB1132";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 47.819404813513067;
+	setAttr ".coi" 33.378000479227204;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 3.8577537255713175 0.82000744348724908 -8.5401005559810805 ;
+	setAttr ".tp" -type "double3" 0.010926246643061965 5.901165078330262 10.56479148714131 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "B87C187F-FE4C-DA8F-1A4D-F9BD3ABAD86E";
@@ -6369,20 +6377,20 @@ createNode mesh -n "bricksShape" -p "bricks";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "631013F4-7444-FA26-54B5-48A0399D2DF6";
+	rename -uid "7FE15D74-5748-4448-EBE9-688F5CB038BA";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "53D46416-1E45-9222-3A28-E7BE5BC76405";
+	rename -uid "052AF55A-B047-66DD-A36A-DEA5DD8CADD4";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "86CF0FF0-3B44-6C46-D04D-3F9E4370E6C3";
+	rename -uid "E7F81699-2341-FFEA-B779-BBB85D63296B";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B205BF18-FC45-6FE6-4789-D5ACA610D5C0";
+	rename -uid "8BA925AF-FE4C-D4E8-7081-B68D66A1AED3";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "C2277C62-9549-C2E8-849C-D88C2CF4C79C";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "7D65D048-B04E-95DF-158D-B19CEF68DCF0";
+	rename -uid "B23C53DA-274C-25A3-4840-FEADA49384D9";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "2DFAECBD-C040-5F5B-EE0B-90BD333706DA";
 	setAttr ".g" yes;
@@ -6668,6 +6676,45 @@ createNode groupId -n "groupId396";
 createNode groupId -n "groupId397";
 	rename -uid "FBB17974-CD48-0DE1-B0AF-F2A6FAEF5F06";
 	setAttr ".ihi" 0;
+createNode reference -n "Potted_plant_1RN";
+	rename -uid "D237FC62-B148-E093-99EE-FA9FCE42DD81";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Potted_plant_1RN"
+		"Potted_plant_1RN" 0
+		"Potted_plant_1RN" 3
+		2 "|Potted_plant_1:polySurface1" "translate" " -type \"double3\" -7.53239606066830536 7.26575538917056285 -7.66836979301925403"
+		
+		2 "|Potted_plant_1:polySurface1" "rotate" " -type \"double3\" 0 -20.81696077715822213 0"
+		
+		2 "|Potted_plant_1:polySurface1" "scale" " -type \"double3\" 0.75674856479032893 0.66837189142621445 0.75674856479032893";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "potted_plant_2RN";
+	rename -uid "2472867F-9A49-C488-10F2-E783D6F2CE0D";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"potted_plant_2RN"
+		"potted_plant_2RN" 9
+		2 "|potted_plant_2:pCylinder1" "translate" " -type \"double3\" 0 0 0"
+		2 "|potted_plant_2:loftedSurface3" "translate" " -type \"double3\" -0.25071212898974338 1.22598849095981111 0"
+		
+		2 "|potted_plant_2:loftedSurface4" "translate" " -type \"double3\" -0.44966080191867985 1.22598849095981111 0"
+		
+		2 "|potted_plant_2:loftedSurface5" "translate" " -type \"double3\" -0.081503423330243407 1.22598849095981111 0"
+		
+		2 "|potted_plant_2:loftedSurface6" "translate" " -type \"double3\" -0.50902164670732897 1.22598849095981111 0.05723401150219054"
+		
+		2 "|potted_plant_2:loftedSurface7" "translate" " -type \"double3\" 0.17929765090134508 1.22598849095981111 -0.080885952015594675"
+		
+		2 "|potted_plant_2:loftedSurface8" "translate" " -type \"double3\" 0.17929765090134508 1.22598849095981111 0.17584908510285224"
+		
+		2 "|potted_plant_2:loftedSurface9" "translate" " -type \"double3\" 0.44133047568691719 1.22598849095981111 0"
+		
+		2 "|potted_plant_2:polySurface6" "translate" " -type \"double3\" 0 0 0"
+		"potted_plant_2RN" 2
+		2 "|potted_plant_2:polySurface7" "translate" " -type \"double3\" -7 1.29049077502544707 9.73902837477379535"
+		
+		2 "|potted_plant_2:polySurface7" "scale" " -type \"double3\" 1.22524142184353435 1.22524142184353435 1.22524142184353435";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -6686,6 +6733,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
+	setAttr -s 3 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -6693,9 +6741,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 93 ".dsm";
+	setAttr -s 126 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 68 ".gn";
+	setAttr -s 98 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -6716,8 +6764,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId93.id" "wallsShape.iog.og[1].gid";
 connectAttr ":initialShadingGroup.mwc" "wallsShape.iog.og[1].gco";
 connectAttr "groupId5.id" "wallsShape.ciog.cog[0].cgid";
